@@ -24,11 +24,14 @@ private:
     void setLastAccessed(int);
 
     int pageFaultCount;
+    
+    void debugTable();
 public:
     vmManager(int s, int a): numberOfFrames(s), algorithm(a) { time = 0; pageFaultCount = 0; }
     void loadPages(std::vector<int>);
     void run();
     void results();
+    
 };
 
 #endif /* defined(__lab3__vmManager__) */

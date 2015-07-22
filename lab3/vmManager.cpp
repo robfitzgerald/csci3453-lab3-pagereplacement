@@ -1,12 +1,11 @@
-//
-//  vmManager.cpp
-//  lab3
-//
-//  Created by Robert Fitzgerald on 7/21/15.
-//  Copyright (c) 2015 Rob Fitzgerald. All rights reserved.
-//
+
 
 #include "vmManager.h"
+#include <iostream>
+
+void vmManager::loadPages(std::vector<int> load) {
+    pages = load;
+}
 
 void vmManager::run() {
     for (time = 0; time < pages.size(); ++time) {
@@ -14,21 +13,54 @@ void vmManager::run() {
     }
 }
 
+void vmManager::results() {
+    std::cout << "page faults: " << pageFaultCount << std::endl;
+}
+
 void vmManager::access() {
-    bool pageReplacement = false;
-    frame incomingPageRequest = pages[time];
+    int incomingPageRequest = pages[time];
     
-    // if incoming is already in there
-    
-    if (pageReplacement) {
+    bool memoryResident = searchTable(incomingPageRequest);
+    if (memoryResident) {
+        setLastAccessed(incomingPageRequest);
+    } else if (pagesTable.size() < numberOfFrames) {
+        pagesTable.push_front(incomingPageRequest);
+        ++pageFaultCount;
+    } else {
+        std::cout << "page replacement: \n";
+        for (std::list<int>::iterator i = pagesTable.begin(); i != pagesTable.end(); ++i)
+            std::cout << *i << " ";
+        std::cout << "\n~~at time: " << time << std::endl;
+        // page replacement
         switch(algorithm) {
             case 1:
-                // do optimal stuff
+                // optimal
+                // for (std::list<int>::iterator i = pagesTable.begin(); i != pagesTable.end(); ++i)
+                //   for (int j = time; j < pages.size(); ++j)
+                //     if (pages[j] == *i)
+                //
                 break;
             case 2:
-                // do LRU stuff
+                // LRU
+                pagesTable.pop_back();
+                pagesTable.push_front(incomingPageRequest);
+                ++pageFaultCount;
                 break;
         }
+    }
+}
+
+bool vmManager::searchTable(int page) {
+    for (std::list<int>::iterator i = pagesTable.begin(); i != pagesTable.end(); ++i)
+        if (*i==page)
+            return true;
+    return false;
+}
+
+void vmManager::setLastAccessed(int page) {
+    if (algorithm==2) {
+        pagesTable.remove(page);
+        pagesTable.push_front(page);
     }
 }
 

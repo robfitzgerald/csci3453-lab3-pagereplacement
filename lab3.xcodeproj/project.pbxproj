@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1513EC5B1B5F41520020D4BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC5A1B5F41520020D4BB /* main.cpp */; };
 		1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC631B5F46AA0020D4BB /* vmManager.cpp */; };
+		1513EC681B60274E0020D4BB /* testDataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC661B60274E0020D4BB /* testDataUtility.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		1513EC5A1B5F41520020D4BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1513EC631B5F46AA0020D4BB /* vmManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vmManager.cpp; sourceTree = "<group>"; };
 		1513EC641B5F46AA0020D4BB /* vmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmManager.h; sourceTree = "<group>"; };
+		1513EC661B60274E0020D4BB /* testDataUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testDataUtility.cpp; sourceTree = "<group>"; };
+		1513EC671B60274E0020D4BB /* testDataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDataUtility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				1513EC5A1B5F41520020D4BB /* main.cpp */,
 				1513EC631B5F46AA0020D4BB /* vmManager.cpp */,
 				1513EC641B5F46AA0020D4BB /* vmManager.h */,
+				1513EC661B60274E0020D4BB /* testDataUtility.cpp */,
+				1513EC671B60274E0020D4BB /* testDataUtility.h */,
 			);
 			path = lab3;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */,
+				1513EC681B60274E0020D4BB /* testDataUtility.cpp in Sources */,
 				1513EC5B1B5F41520020D4BB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

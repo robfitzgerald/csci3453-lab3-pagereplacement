@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <vector>
 #include <ctime>
+#include <stdio.h>
 
 std::vector<int> generateRandom(int pages, int range, bool trueRandom) {
     std::vector<int> pageList;
@@ -25,4 +26,16 @@ std::vector<int> generateRandom(int pages, int range, bool trueRandom) {
     }
     
     return pageList;
+}
+
+std::string formattedGenerator(int p, int r, bool t) {
+    std::string output;
+    std::vector<int> pages = generateRandom(p, r, t);
+    for (int i = 0; i < pages.size(); ++i) {
+        char line [20];
+        sprintf(line, "%d\n", pages[i]);
+        output += line;
+    }
+    
+    return output;
 }

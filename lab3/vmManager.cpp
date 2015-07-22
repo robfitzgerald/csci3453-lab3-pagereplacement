@@ -2,6 +2,8 @@
 
 #include "vmManager.h"
 #include <iostream>
+#include <iomanip>
+#include <string>
 
 void vmManager::loadPages(std::vector<int> load) {
     pages = load;
@@ -10,11 +12,29 @@ void vmManager::loadPages(std::vector<int> load) {
 void vmManager::run() {
     for (time = 0; time < pages.size(); ++time) {
         access();
+        if ((time>0)&&(((time+1)%2000) == 0)) {
+            faultRatios.push_back((float) pageFaultCount / (float) time);
+        }
     }
 }
 
 void vmManager::results() {
-    std::cout << "page faults: " << pageFaultCount << std::endl;
+    std::string algorithmName;
+    switch (algorithm) {
+        case 1:
+            algorithmName = "Optimal";
+            break;
+        case 2:
+            algorithmName = "LRU";
+            break;
+    }
+    std::cout   << "  " << std::left << std::setprecision(3) << std::fixed
+                << std::setw(14) << algorithmName
+                << std::setw(14) << pageFaultCount;
+    for (int i = 0; i < faultRatios.size(); ++i) {
+        std::cout << faultRatios[i] << " ";
+    }
+    std::cout << std::endl;
 }
 
 void vmManager::access() {
@@ -22,11 +42,11 @@ void vmManager::access() {
     bool memoryResident = searchTable(incomingPageRequest);
     if (memoryResident) {
         setLastAccessed(incomingPageRequest);
-        debugTable();
+        //debugTable();
     } else if (pagesTable.size() < numberOfFrames) {
         pagesTable.push_front(incomingPageRequest);
         ++pageFaultCount;
-        debugTable();
+        //debugTable();
     } else {
         // page replacement
         switch(algorithm) {
@@ -69,7 +89,7 @@ void vmManager::access() {
         }
         pagesTable.push_front(incomingPageRequest);
         ++pageFaultCount;
-        debugTable();
+        //debugTable();
     }
 }
 

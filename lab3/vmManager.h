@@ -24,6 +24,7 @@ private:
     void setLastAccessed(int);
 
     int pageFaultCount;
+    std::vector<float> faultRatios;
     
     void debugTable();
 public:

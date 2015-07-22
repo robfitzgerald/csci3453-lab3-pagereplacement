@@ -10,6 +10,7 @@
 		1513EC5B1B5F41520020D4BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC5A1B5F41520020D4BB /* main.cpp */; };
 		1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC631B5F46AA0020D4BB /* vmManager.cpp */; };
 		1513EC681B60274E0020D4BB /* testDataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC661B60274E0020D4BB /* testDataUtility.cpp */; };
+		1513EC6B1B6039BC0020D4BB /* readfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC691B6039BC0020D4BB /* readfile.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		1513EC641B5F46AA0020D4BB /* vmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmManager.h; sourceTree = "<group>"; };
 		1513EC661B60274E0020D4BB /* testDataUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testDataUtility.cpp; sourceTree = "<group>"; };
 		1513EC671B60274E0020D4BB /* testDataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testDataUtility.h; sourceTree = "<group>"; };
+		1513EC691B6039BC0020D4BB /* readfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = readfile.cpp; sourceTree = "<group>"; };
+		1513EC6A1B6039BC0020D4BB /* readfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = readfile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				1513EC5A1B5F41520020D4BB /* main.cpp */,
+				1513EC691B6039BC0020D4BB /* readfile.cpp */,
+				1513EC6A1B6039BC0020D4BB /* readfile.h */,
 				1513EC631B5F46AA0020D4BB /* vmManager.cpp */,
 				1513EC641B5F46AA0020D4BB /* vmManager.h */,
 				1513EC661B60274E0020D4BB /* testDataUtility.cpp */,
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */,
+				1513EC6B1B6039BC0020D4BB /* readfile.cpp in Sources */,
 				1513EC681B60274E0020D4BB /* testDataUtility.cpp in Sources */,
 				1513EC5B1B5F41520020D4BB /* main.cpp in Sources */,
 			);

@@ -9,9 +9,12 @@
 #ifndef __lab3__testDataUtility__
 #define __lab3__testDataUtility__
 
-#include <stdio.h>
 #include <vector>
+#include <string>
 
 std::vector<int> generateRandom(int, int, bool);
+
+std::string formattedGenerator(int, int, bool);
+
 
 #endif /* defined(__lab3__testDataUtility__) */

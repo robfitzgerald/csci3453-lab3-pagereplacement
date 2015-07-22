@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
 
 void vmManager::loadPages(std::vector<int> load) {
     pages = load;
@@ -18,7 +19,8 @@ void vmManager::run() {
     }
 }
 
-void vmManager::results() {
+std::string vmManager::results() {
+    std::stringstream output;
     std::string algorithmName;
     switch (algorithm) {
         case 1:
@@ -28,13 +30,14 @@ void vmManager::results() {
             algorithmName = "LRU";
             break;
     }
-    std::cout   << "  " << std::left << std::setprecision(3) << std::fixed
+    output   << "  " << std::left << std::setprecision(3) << std::fixed
                 << std::setw(14) << algorithmName
                 << std::setw(14) << pageFaultCount;
     for (int i = 0; i < faultRatios.size(); ++i) {
-        std::cout << faultRatios[i] << " ";
+        output << faultRatios[i] << " ";
     }
-    std::cout << std::endl;
+    output << std::endl;
+    return output.str();
 }
 
 void vmManager::access() {

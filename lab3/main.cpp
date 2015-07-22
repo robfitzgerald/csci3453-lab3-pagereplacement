@@ -1,47 +1,41 @@
 
 
+#include <cstdlib>
 #include <iostream>
 #include <vector>
+#include <fstream>
 #include "vmManager.h"
 #include "testDataUtility.h"
 #include "readfile.h"
 
+
 int main(int argc, const char * argv[]) {
-//    TEST 1: using Silberschatz Data
-//    std::vector<int> refString;
-//    int refStringSrc [20] = {7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1};
-//    for (int i = 0; i < 20; ++i) {
-//        refString.push_back(refStringSrc[i]);
-//    }
-//    vmManager vmManager(3, 1);
-//    vmManager.loadPages(refString);
-//    vmManager.run();
-//    vmManager.results();
+    if (argc < 3) {
+        std::cout << "usage: % lab3 num_frames input_file output_file\n";
+        return 1;
+    }
     
-//    TEST 2: using random generator
-//    lru.loadPages(generateRandom(10000, 512, true));
-//    lru.run();
-//    lru.results();
-//    optimal.loadPages(generateRandom(10000, 512, true));
-//    optimal.run();
-//    optimal.results();
+    std::vector<int> data = read_file(argv[2]);
+    std::ofstream outFile;
+    outFile.open(argv[3], std::ofstream::out | std::ofstream::app);
     
-    std::vector<int> data = read_file("testData.txt");
+    int frames = atoi(argv[1]);
     
-    int frames = 64;
-    std::cout   << "==============================================================\n"
+    outFile   << "==============================================================\n"
                 << "  Page Replacement Algorithm Simulation (num frames = " << frames << ")\n"
                 << "==============================================================\n"
                 << "                                    Page fault ratio          \n"
                 << "  Algorithm Total page faults 2000  4000  6000  8000  10000   \n"
                 << "--------------------------------------------------------------\n";
+    
     vmManager lru(frames, 2), optimal(frames, 1);
     lru.loadPages(data);
     lru.run();
-    lru.results();
+    outFile << lru.results();
     optimal.loadPages(data);
     optimal.run();
-    optimal.results();
+    outFile << optimal.results();
+    outFile.close();
     
     return 0;
 }

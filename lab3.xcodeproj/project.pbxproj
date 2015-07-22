@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1513EC5B1B5F41520020D4BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC5A1B5F41520020D4BB /* main.cpp */; };
+		1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1513EC631B5F46AA0020D4BB /* vmManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		1513EC571B5F41520020D4BB /* lab3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lab3; sourceTree = BUILT_PRODUCTS_DIR; };
 		1513EC5A1B5F41520020D4BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1513EC631B5F46AA0020D4BB /* vmManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vmManager.cpp; sourceTree = "<group>"; };
+		1513EC641B5F46AA0020D4BB /* vmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				1513EC5A1B5F41520020D4BB /* main.cpp */,
+				1513EC631B5F46AA0020D4BB /* vmManager.cpp */,
+				1513EC641B5F46AA0020D4BB /* vmManager.h */,
 			);
 			path = lab3;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1513EC651B5F46AA0020D4BB /* vmManager.cpp in Sources */,
 				1513EC5B1B5F41520020D4BB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,6 +33,7 @@
 #include <stack>
 #include <deque>
 #include <list>
+#include <string>
 
 class vmManager {
 private:
